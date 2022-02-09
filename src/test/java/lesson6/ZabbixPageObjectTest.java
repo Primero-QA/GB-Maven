@@ -1,6 +1,9 @@
 package lesson6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+@Story ("Fill the apply form")
 public class ZabbixPageObjectTest {
     WebDriver driver;
     private final static String ZABBIX_URL = "https://zabbix.com";
@@ -24,6 +28,8 @@ public class ZabbixPageObjectTest {
     }
 
     @Test
+    @Feature("Test engineer")
+    @Description("Apply form search and fill")
     void fillCareerForm() {
         new StartPage(driver)
         .clickLanguageButton()
